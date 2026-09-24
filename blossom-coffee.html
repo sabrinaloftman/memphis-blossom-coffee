@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blossom Coffee | Coffee, Crepes & Sweets on Summer Ave, Memphis</title>
+<meta name="description" content="The Blossom Coffee is a cozy, beautifully decorated coffee shop at 4531 Summer Ave in Memphis, TN. Specialty coffee, strawberry matcha, crepes and Dubai chocolate strawberries. Open Mon–Sat 7:30am–7pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"The Blossom Coffee","email":"theblossomcoffee@gmail.com",
+"address":{"@type":"PostalAddress","streetAddress":"4531 Summer Ave","addressLocality":"Memphis","addressRegion":"TN","postalCode":"38122","addressCountry":"US"},
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:30","closes":"19:00"}],
+"servesCuisine":["Coffee","Crepes","Desserts"],"priceRange":"$"}
+</script>
+<style>
+:root{
+  --cream:#f8f4ee; --blush:#ffe1ec; --petal:#ffb0cf; --rose:#ff5fa2; --deep:#e8317f;
+  --cocoa:#5c4322; --gold:#7a5a2c; --ink:#3a2c1c; --muted:#8a7762; --line:#ecdfd4; --white:#fff;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;color:var(--gold)}
+.eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--deep);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.6rem;border-radius:999px;font-weight:500;font-size:.95rem;transition:.25s}
+.btn-primary{background:var(--deep);color:#fff;box-shadow:0 10px 24px -12px rgba(232,49,127,.7)}
+.btn-primary:hover{background:var(--cocoa);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--cocoa);color:var(--cocoa)}
+.btn-ghost:hover{background:var(--cocoa);color:var(--cream)}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(253,248,244,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.3s}
+header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:86px}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.55rem;font-weight:600;color:var(--cocoa)}
+.logo img{height:64px;width:auto}
+footer .logo img{height:96px;filter:brightness(0) invert(.95) sepia(.15)}
+.nav ul{display:flex;gap:2.2rem;list-style:none;font-size:.93rem}
+.nav ul a{position:relative;padding:.3rem 0}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--deep);transition:.25s}
+.nav ul a:hover::after{width:100%}
+.nav .btn{padding:.6rem 1.2rem}
+.burger{display:none;background:none;border:0;cursor:pointer;width:40px;height:40px}
+.burger span{display:block;width:22px;height:1.5px;background:var(--cocoa);margin:5px auto;transition:.3s}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:90px 0 110px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero h1{font-size:clamp(3rem,6.5vw,5.4rem);margin:1.1rem 0 1.4rem}
+.hero h1 em{color:var(--deep);font-style:italic}
+.hero p.lead{font-size:1.1rem;color:var(--muted);max-width:30rem;margin-bottom:2.2rem}
+.hero .ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:.55rem;background:var(--white);border:1px solid var(--line);padding:.45rem 1rem;border-radius:999px;font-size:.85rem;margin-top:2.2rem}
+.dot{width:8px;height:8px;border-radius:50%;background:#aaa}
+.dot.open{background:#6bbf8a;box-shadow:0 0 0 4px rgba(107,191,138,.2)}
+.hero-art{position:relative;aspect-ratio:4/5;border-radius:220px 220px var(--r) var(--r);background:linear-gradient(170deg,var(--petal),var(--blush) 55%,#fff0f5);display:grid;place-items:center;box-shadow:0 30px 60px -30px rgba(232,49,127,.45)}
+.hero-art .cup{width:62%}
+.hero-art .tag{position:absolute;bottom:28px;left:-28px;background:var(--white);padding:1rem 1.3rem;border-radius:16px;box-shadow:0 14px 30px -14px rgba(92,67,34,.3);font-size:.85rem}
+.hero-art .tag strong{display:block;font-family:var(--serif);font-size:1.35rem;color:var(--cocoa)}
+.stars{color:var(--rose);letter-spacing:2px}
+
+/* marquee */
+.ribbon{background:var(--deep);color:var(--cream);padding:1rem 0;overflow:hidden;white-space:nowrap}
+.ribbon div{display:inline-block;animation:scroll 32s linear infinite;font-family:var(--serif);font-size:1.35rem;font-style:italic}
+.ribbon span{margin:0 1.6rem;color:#ffd1e3}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.head{text-align:center;max-width:620px;margin:0 auto 60px}
+.head h2{font-size:clamp(2.4rem,4.5vw,3.4rem);margin:.8rem 0 1rem}
+.head p{color:var(--muted)}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about-art{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tile{border-radius:var(--r);aspect-ratio:3/4;display:grid;place-items:center}
+.tile svg{width:55%}
+.tile:nth-child(1){background:var(--blush)}
+.tile:nth-child(2){background:#efe5d6;margin-top:50px}
+.about h2{font-size:clamp(2.2rem,4vw,3.2rem);margin:.8rem 0 1.4rem}
+.about p{color:var(--muted);margin-bottom:1.1rem}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--line)}
+.feats strong{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--cocoa)}
+.feats small{color:var(--muted);font-size:.85rem}
+
+/* menu */
+.menu{background:var(--white)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:var(--cream);border-radius:var(--r);padding:28px 24px 30px;transition:.3s;border:1px solid transparent}
+.card:hover{transform:translateY(-6px);border-color:var(--petal);box-shadow:0 20px 40px -24px rgba(232,49,127,.4)}
+.card .ic{width:64px;height:64px;border-radius:50%;background:var(--blush);display:grid;place-items:center;margin-bottom:1.3rem}
+.card .ic svg{width:34px;height:34px}
+.card h3{font-size:1.55rem;margin-bottom:.5rem}
+.card p{font-size:.92rem;color:var(--muted)}
+.card .badge{display:inline-block;margin-top:1rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--deep);font-weight:600}
+.menu-note{text-align:center;margin-top:44px;color:var(--muted);font-size:.95rem}
+.menu-note a{color:var(--deep);border-bottom:1px solid var(--petal)}
+
+/* reviews */
+.reviews{background:linear-gradient(180deg,var(--cream),var(--blush))}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review{background:var(--white);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:1rem}
+.review blockquote{font-family:var(--serif);font-size:1.3rem;line-height:1.4;color:var(--cocoa)}
+.review cite{font-style:normal;font-size:.85rem;color:var(--muted);margin-top:auto}
+.review cite b{color:var(--ink);font-weight:600}
+.review.big{grid-column:span 2;background:linear-gradient(135deg,var(--deep),var(--rose))}
+.review.big blockquote{color:var(--cream);font-size:1.7rem}
+.review.big cite,.review.big cite b,.review.big .stars{color:#fff}
+
+/* visit */
+.visit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:stretch}
+.info{background:var(--white);border-radius:var(--r);padding:44px;border:1px solid var(--line)}
+.info h2{font-size:2.8rem;margin:.7rem 0 2rem}
+.row{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.row:last-of-type{border:0}
+.row svg{flex:none;width:22px;height:22px;stroke:var(--deep);margin-top:3px}
+.row h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.2rem}
+.hours{list-style:none;font-size:.95rem}
+.hours li{display:flex;justify-content:space-between;gap:2rem}
+.hours li.today{color:var(--deep);font-weight:600}
+.tip{background:var(--blush);border-radius:14px;padding:1rem 1.2rem;font-size:.88rem;margin-top:1.4rem}
+.map{border-radius:var(--r);overflow:hidden;position:relative;background:linear-gradient(160deg,var(--deep),var(--rose) 60%,var(--petal));color:#fff;padding:48px 44px;display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:420px}
+.map::before{content:"";position:absolute;inset:0;opacity:.18;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:44px 44px;transform:rotate(-8deg) scale(1.3)}
+.map>*{position:relative}
+.pin{width:74px;height:74px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 12px rgba(255,255,255,.25),0 0 0 26px rgba(255,255,255,.12)}
+.pin svg{width:34px;height:34px;stroke:var(--deep)}
+.map h3{color:#fff;font-size:clamp(2rem,3.5vw,2.8rem);margin:2rem 0 .6rem}
+.map p{opacity:.92;max-width:26rem}
+.map .btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.map .btn-w{background:#fff;color:var(--deep)}
+.map .btn-w:hover{background:var(--cocoa);color:#fff}
+.map .btn-o{border:1px solid rgba(255,255,255,.8);color:#fff}
+.map .btn-o:hover{background:#fff;color:var(--deep)}
+.map .faith{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:.95;border-top:1px solid rgba(255,255,255,.35);padding-top:1.2rem}
+
+/* footer */
+footer{background:var(--cocoa);color:#e8d8d3;padding:70px 0 34px}
+.fgrid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer .logo{color:var(--cream)}
+footer p{max-width:22rem;margin-top:1rem;font-size:.92rem;opacity:.8}
+footer h5{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--petal);margin-bottom:1rem}
+footer ul{list-style:none;font-size:.93rem;line-height:2}
+footer ul a:hover{color:var(--petal)}
+.copy{padding-top:26px;font-size:.8rem;opacity:.6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:960px){
+  .hero .wrap,.about .wrap,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .about-art{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .hero-art{max-width:380px;margin:0 auto;width:100%}
+  .hero-art .tag{left:10px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .rgrid{grid-template-columns:1fr}
+  .review.big{grid-column:auto}
+}
+@media (max-width:760px){
+  .wrap{padding:0 18px}
+  section{padding:80px 0}
+  .hero{padding:50px 0 80px}
+  .burger{display:block}
+  .nav ul{position:fixed;inset:86px 0 auto 0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .35s}
+  .nav ul.open{max-height:320px}
+  .nav ul li{padding:.9rem 18px;border-top:1px solid var(--line)}
+  .nav > .btn{display:none}
+  .grid{grid-template-columns:1fr}
+  .feats{grid-template-columns:1fr 1fr 1fr;gap:.6rem}
+  .info{padding:30px 22px}
+  .map{min-height:0;padding:36px 24px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+
+<header id="top">
+  <nav class="wrap nav">
+    <a href="#top" class="logo" aria-label="The Blossom Coffee home"><img data-logo src="" alt="The Blossom Coffee — Est 2026, Built on Faith"></a>
+    <ul id="menuList">
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a href="#visit" class="btn btn-primary">Find Us</a>
+    <button class="burger" aria-label="Open menu" id="burger"><span></span><span></span></button>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Coffee &middot; Crepes &middot; Sweets &mdash; Memphis, TN</span>
+      <h1>Where every cup is in <em>full bloom.</em></h1>
+      <p class="lead">A family-run coffee shop on Summer Avenue with handcrafted drinks, sweet crepes, Dubai chocolate strawberries, and a space made for slowing down.</p>
+      <div class="ctas">
+        <a href="#menu" class="btn btn-primary">Explore the Menu</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=4531+Summer+Ave+Memphis+TN+38122" target="_blank" rel="noopener" class="btn btn-ghost">Get Directions</a>
+      </div>
+      <div class="status"><span class="dot" id="dot"></span><span id="statusText">Mon–Sat &middot; 7:30am–7pm</span></div>
+    </div>
+    <div class="hero-art reveal">
+      <svg class="cup" viewBox="0 0 200 220" fill="none">
+        <path d="M78 40c-8-10 8-18 0-30M100 44c-8-12 8-20 0-34M122 40c-8-10 8-18 0-30" stroke="#e8317f" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+        <path d="M30 70h130l-12 108a24 24 0 0 1-24 21H66a24 24 0 0 1-24-21z" fill="#f8f4ee"/>
+        <path d="M160 92h8a22 22 0 0 1 0 44h-12" stroke="#f8f4ee" stroke-width="12" stroke-linecap="round"/>
+        <ellipse cx="95" cy="70" rx="65" ry="12" fill="#ffb0cf"/>
+        <ellipse cx="95" cy="70" rx="55" ry="8" fill="#b98c56"/>
+        <path d="M80 70c6-6 24-6 30 0-6 5-24 5-30 0z" fill="#f8f4ee" opacity=".8"/>
+        <path d="M95 158c-14-9-22-17-22-26a10 10 0 0 1 22-4 10 10 0 0 1 22 4c0 9-8 17-22 26z" fill="#ff5fa2"/>
+        <ellipse cx="95" cy="206" rx="80" ry="8" fill="#ff5fa2" opacity=".25"/>
+      </svg>
+      <div class="tag"><span class="stars">★★★★★</span><strong>“Such a feminine vibe”</strong>Loved by Memphis guests</div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true"><div>
+  Strawberry Matcha <span>✿</span> Sweet Crepes <span>✿</span> Dubai Chocolate <span>✿</span> Chocolate Strawberries <span>✿</span> Espresso &amp; Lattes <span>✿</span> Strawberry Matcha <span>✿</span> Sweet Crepes <span>✿</span> Dubai Chocolate <span>✿</span> Chocolate Strawberries <span>✿</span> Espresso &amp; Lattes <span>✿</span>
+</div></div>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-art reveal">
+      <div class="tile"><img data-logo src="" alt="" style="width:78%;height:auto"></div>
+      <div class="tile"><svg viewBox="0 0 64 64" fill="none" stroke="#5c4322" stroke-width="2.2" stroke-linecap="round"><path d="M12 24h34l-3 26a6 6 0 0 1-6 5H21a6 6 0 0 1-6-5z"/><path d="M46 30h3a6 6 0 0 1 0 12h-4"/><path d="M22 16c-2-3 2-5 0-8M30 16c-2-3 2-5 0-8M38 16c-2-3 2-5 0-8"/></svg></div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Our Story &middot; Est. 2026</span>
+      <h2>A little blossom on Summer Avenue</h2>
+      <p>Built on faith and run by family, The Blossom Coffee opened in 2026 around one simple idea: good coffee tastes even better in a beautiful space. Every corner is thoughtfully decorated, soft, bright and welcoming, so you can linger over a latte or grab something sweet on the go.</p>
+      <p>From our signature strawberry matcha to crepes and chocolate-dipped strawberries, everything is made with care and served with a warm smile.</p>
+      <div class="feats">
+        <div><strong>Faith</strong><small>built on it</small></div>
+        <div><strong>Family</strong><small>owned &amp; run</small></div>
+        <div><strong>6 days</strong><small>a week</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Guest Favorites</span>
+      <h2>Made to be savored</h2>
+      <p>A taste of what people keep coming back for.</p>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="#e8317f" stroke-width="2" stroke-linecap="round"><path d="M10 12h20l-2 20a3 3 0 0 1-3 3H15a3 3 0 0 1-3-3z"/><path d="M11 20h18"/><path d="M22 12l4-8"/></svg></div>
+        <h3>Strawberry Matcha</h3>
+        <p>Layers of strawberry and smooth, earthy matcha. Pretty to look at, even better to sip.</p>
+        <span class="badge">Signature</span>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="#e8317f" stroke-width="2" stroke-linecap="round"><path d="M6 26c6-10 22-10 28 0"/><path d="M6 26h28"/><circle cx="16" cy="19" r="2"/><circle cx="24" cy="18" r="2"/></svg></div>
+        <h3>Sweet Crepes</h3>
+        <p>Delicate crepes with fresh strawberries or rich chocolate, folded to order.</p>
+        <span class="badge">Fan favorite</span>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="#e8317f" stroke-width="2" stroke-linecap="round"><path d="M20 12c-7 0-11 5-10 12 1 6 6 11 10 11s9-5 10-11c1-7-3-12-10-12z"/><path d="M14 10c2 2 4 2 6 2s4 0 6-2"/><path d="M11 22c6 3 12 3 18 0"/></svg></div>
+        <h3>Dubai Chocolate</h3>
+        <p>Pistachio, crunchy kataifi and chocolate over fresh strawberries. Worth the craving.</p>
+        <span class="badge">Best in Memphis*</span>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 40 40" fill="none" stroke="#e8317f" stroke-width="2" stroke-linecap="round"><path d="M10 14h18l-2 18a3 3 0 0 1-3 3h-8a3 3 0 0 1-3-3z"/><path d="M28 18h2a4 4 0 0 1 0 8h-3"/><path d="M15 9c-1-2 1-3 0-5M21 9c-1-2 1-3 0-5"/></svg></div>
+        <h3>Coffee &amp; Espresso</h3>
+        <p>Lattes, cappuccinos and classic drip, hot or iced, made just the way you like it.</p>
+        <span class="badge">Every day</span>
+      </article>
+    </div>
+    <p class="menu-note">*According to one very happy guest. Full menu and seasonal specials in store, or email <a href="mailto:theblossomcoffee@gmail.com">theblossomcoffee@gmail.com</a>.</p>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Kind Words</span>
+      <h2>What our guests are saying</h2>
+      <p>From Google reviews</p>
+    </div>
+    <div class="rgrid">
+      <div class="review big reveal">
+        <span class="stars">★★★★★</span>
+        <blockquote>“The best Dubai chocolate in Memphis, and good coffee too! The family is so sweet and the space has been decorated beautifully.”</blockquote>
+        <cite><b>Hailey B.</b> &middot; Google Review</cite>
+      </div>
+      <div class="review reveal">
+        <span class="stars">★★★★★</span>
+        <blockquote>“Love the vibe &amp; decor. Strawberry matcha and strawberry crepes were delicious.”</blockquote>
+        <cite><b>C. Cruz</b> &middot; Google Review</cite>
+      </div>
+      <div class="review reveal">
+        <span class="stars">★★★★★</span>
+        <blockquote>“A beautiful shop with excellent service and phenomenal food &amp; drinks.”</blockquote>
+        <cite><b>D. White</b> &middot; Google Review</cite>
+      </div>
+      <div class="review reveal">
+        <span class="stars">★★★★★</span>
+        <blockquote>“Such a feminine vibe, welcoming atmosphere, and good-tasting coffee.”</blockquote>
+        <cite><b>Sis. B</b> &middot; Google Review</cite>
+      </div>
+      <div class="review reveal">
+        <span class="stars">★★★★★</span>
+        <blockquote>“The atmosphere was lovely, and the coffee was absolutely delicious. We will definitely go back.”</blockquote>
+        <cite><b>Nikki D.</b> &middot; Google Review</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="info reveal">
+      <span class="eyebrow">Come Say Hi</span>
+      <h2>Visit the Blossom</h2>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><h4>Address</h4><a href="https://www.google.com/maps/dir/?api=1&destination=4531+Summer+Ave+Memphis+TN+38122" target="_blank" rel="noopener">4531 Summer Ave<br>Memphis, TN 38122</a></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div style="flex:1"><h4>Hours</h4>
+          <ul class="hours" id="hours">
+            <li data-d="1"><span>Monday</span><span>7:30am – 7pm</span></li>
+            <li data-d="2"><span>Tuesday</span><span>7:30am – 7pm</span></li>
+            <li data-d="3"><span>Wednesday</span><span>7:30am – 7pm</span></li>
+            <li data-d="4"><span>Thursday</span><span>7:30am – 7pm</span></li>
+            <li data-d="5"><span>Friday</span><span>7:30am – 7pm</span></li>
+            <li data-d="6"><span>Saturday</span><span>7:30am – 7pm</span></li>
+            <li data-d="0"><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <div><h4>Email</h4><a href="mailto:theblossomcoffee@gmail.com">theblossomcoffee@gmail.com</a></div>
+      </div>
+      <div class="tip"><b>Parking tip:</b> Street parking out front can be tight. There’s an alley between our building and the laundromat that leads to additional parking in back.</div>
+    </div>
+    <div class="map reveal">
+      <div>
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>We’re on Summer Ave</h3>
+        <p>Find us at 4531 Summer Avenue in Memphis. Stop in for a latte, stay for the crepes, and leave with a box of chocolate strawberries.</p>
+      </div>
+      <div class="btns">
+        <a class="btn btn-w" href="https://www.google.com/maps/dir/?api=1&destination=4531+Summer+Ave+Memphis+TN+38122" target="_blank" rel="noopener">Google Maps</a>
+        <a class="btn btn-o" href="https://maps.apple.com/?daddr=4531+Summer+Ave,+Memphis,+TN+38122" target="_blank" rel="noopener">Apple Maps</a>
+        <a class="btn btn-o" href="https://www.facebook.com/profile.php?id=61589404807827" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="faith">“Built on faith, served with love.”</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a href="#top" class="logo"><img data-logo src="" alt="The Blossom Coffee"></a>
+        <p>Coffee, crepes &amp; sweet treats, served with love on Summer Avenue in Memphis.</p>
+      </div>
+      <div><h5>Visit</h5><ul><li>4531 Summer Ave</li><li>Memphis, TN 38122</li><li>Mon–Sat &middot; 7:30am–7pm</li></ul></div>
+      <div><h5>Connect</h5><ul>
+        <li><a href="https://www.facebook.com/profile.php?id=61589404807827" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="mailto:theblossomcoffee@gmail.com">Email us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> The Blossom Coffee. All rights reserved.</span><span>Built on faith &middot; Memphis, TN</span></div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll("img[data-logo]").forEach(i=>i.src="data:image/png;base64,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");
+// sticky header border
+const hdr=document.querySelector('header');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
+// mobile menu
+const list=document.getElementById('menuList');
+document.getElementById('burger').onclick=()=>list.classList.toggle('open');
+list.querySelectorAll('a').forEach(a=>a.onclick=()=>list.classList.remove('open'));
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// open / closed status in Memphis time
+(function(){
+  const now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Chicago'}));
+  const d=now.getDay(), m=now.getHours()*60+now.getMinutes();
+  const open=d>=1&&d<=6&&m>=450&&m<1140;
+  document.getElementById('dot').classList.toggle('open',open);
+  document.getElementById('statusText').textContent=open?'Open now · until 7pm':(d===0||(d===6&&m>=1140)?'Closed · opens Monday 7:30am':(m<450?'Closed · opens today 7:30am':'Closed · opens tomorrow 7:30am'));
+  const li=document.querySelector('#hours li[data-d="'+d+'"]'); if(li) li.classList.add('today');
+  document.getElementById('yr').textContent=now.getFullYear();
+})();
+</script>
+</body>
+</html>
